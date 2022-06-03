@@ -1,0 +1,28 @@
+Package: PoliSciTools
+Type: Package
+Title: A Collection of Tools for Political Research
+Version: 0.0.1
+Authors@R: 
+    person("A. Jordan", "Nafa", email = "adamjnafa@gmail.com", role = c("aut", "cre"))
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    ggplot2 (>= 3.3.6),
+    sjlabelled (>= 1.2.0),
+    tibble (>= 3.1.7),
+    purrr (>= 0.3.4),
+    stringr (>= 1.4.0),
+    future (>= 1.19.0),
+    brms (>= 2.17.0),
+    rstanarm (>= 2.21.3),
+    loo (>= 2.3.1),
+    posterior (>= 1.0.0),
+    bayestestR (>= 0.12.1.1),
+    stats,
+    Rdpack
+RdMacros: Rdpack
+License: TBD
+Description: A collection of functions I've developed over the years and finally got around to making a package for. I'll add a more detailed description later
+RoxygenNote: 7.2.0
