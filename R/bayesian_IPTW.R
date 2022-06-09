@@ -14,11 +14,12 @@
 #' @param denom_model A required argument supplying either a model of class \code{brmsfit}
 #' or an \eqn{m \times n} matrix of posterior expectations where \eqn{m} denotes draws
 #' from the posterior predictive distribution and \eqn{n} is the number of observations
-#' in the data. This argument corresponds to the denominator of the stabilized weights.
+#' in the data. This argument corresponds to the denominator of the stabilized weights
+#' and must be of same class as \code{num_model}.
 #' @param method An argument of type character indicating whether \code{num_model} and
-#' \code{denom_model} are matrix or \code{brmsfit} objects. Defaults to \code{"epred"}
+#' \code{denom_model} are \code{matrix} or \code{brmsfit} objects. Defaults to \code{"epred"}
 #' which corresponds to \code{brmsfit} objects but can be set to \code{"average"} when
-#' passing matrices of posterior predictions which allows for the use model averaged
+#' passing matrices of posterior predictions which allows for the use of model averaged
 #' or stacked posterior predictive distributions.
 #' @param response A required argument specifying a numeric vector of length \eqn{n}
 #' containing the data for the response used in the treatment propensity model.
@@ -33,12 +34,13 @@
 #' @param log_weights Whether to return the summarized weights in raw or log transformed
 #' form. This can be useful when the stabilized weights exhibit a high degree of variance.
 #' Defaults to \code{FALSE} which just returns the weights in their raw form. If
-#' \code{TRUE}, summary estimates are transformed by calling \code{log1p}
+#' \code{TRUE}, summary estimates are transformed by calling \code{log1p}.
 #' @param ... Additional arguments to be passed to \code{brms::posterior_epred}.
-#' Only used if method = "epred".
+#' Only used if method = "epred" and ignored otherwise.
 #'
-#' @return The function returns a list containing a matrix of the full posterior distribution of the
-#' inverse probability of treatment weights and by-observation summary statistics.
+#' @return The function returns a list containing a matrix of the full posterior
+#' distribution of the inverse probability of treatment weights and by-observation
+#' summary statistics.
 #'
 #' @details Following \insertCite{Blackwell2018}{PoliSciTools}, the stabilized inverse probability weights
 #' for the average treatment effect (ATE) of a binary treatment can be expressed as
